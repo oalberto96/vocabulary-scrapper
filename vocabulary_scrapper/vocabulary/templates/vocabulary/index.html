@@ -1,0 +1,10 @@
+<form action="{% url 'vocabulary:extract' %}" method="POST">
+{% csrf_token %}
+    <label>
+  DW Url
+</label>
+<input type="text" name="url" />
+<input type="submit" value="Extract"  >Extract vocabulary</button>
+
+
+</form>
