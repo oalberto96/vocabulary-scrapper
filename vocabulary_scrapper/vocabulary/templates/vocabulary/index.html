@@ -1,10 +1,39 @@
+<h1>{{title}}</h1>
+
+<table>
+  <thead>
+    <th>German</th>
+    <th>English</th>
+    <th>Audio</th>
+  </thead>
+  <tbody>
+    {% for row in data %}
+    <tr>
+      <td>{{row.german}}</td>
+      <td>{{row.english}}</td>
+      <td><audio controls>
+        <source  src="{{row.audio}}">
+        
+        </source>
+        {{row.audio}}
+      </audio>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
 <form action="{% url 'vocabulary:extract' %}" method="POST">
 {% csrf_token %}
     <label>
-  DW Url
+      username
 </label>
-<input type="text" name="url" />
-<input type="submit" value="Extract"  >Extract vocabulary</button>
+<input type="text" name="username"/>
+<label>
+  password
+</label>
+<input type="password" name="password"/>
+<input type="submit" value="Export to flashy cards" ></button>
 
 
 </form>
